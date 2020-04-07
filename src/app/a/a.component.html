@@ -1,0 +1,29 @@
+<app-b 
+[All]='allemployeeData()' 
+[Male]='maleLength()'
+[Female]='femaleLength()'
+(radiobuttonChanged)="onbuttonClick($event)"
+>
+</app-b>
+<table border="1px;" >
+  <thead>
+    <tr>
+      <th>EmpID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Salary</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody border="1px;">
+    <ng-container  *ngFor="let emp of  employee" >
+    <tr *ngIf="changedvaluebutton=='all'|| changedvaluebutton==emp.gender">
+        <td>{{emp.empId}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.age}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.gender}}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
