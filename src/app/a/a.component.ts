@@ -1,14 +1,17 @@
 import { Component, OnInit} from '@angular/core';
-
+import {Iemployee} from './interfaces/employee';
 @Component({
   selector: 'app-a',
   templateUrl: './a.component.html',
   styleUrls: ['./a.component.css']
 })
+
 export class AComponent implements OnInit{
+
   changedvaluebutton:string='all';
-  employee=[];
-  constructor() {
+  
+  employee:Iemployee[];
+    constructor() {
     this.employee=[
      {empId:'Dev0001',name:'prasanna',age:'27',salary:70000,gender:'male'},
      {empId:'Dev0002',name:'kumar',age:'25',salary:50000,gender:'male'},
